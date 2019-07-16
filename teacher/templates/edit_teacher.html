@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1 style= "font-family: Lucida calligraphy">STUDENT'S REGISRATION FORM</h1>
+
+  <style>
+   body{
+    margin-left: 10px;
+    padding-top: 15px;
+    color: #800000;
+    font-family: verdana;
+    font-size: 20px;
+    
+    background-color: #ccc;
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  
+  body h1{
+    color: green;
+    font-weight: bold;
+  }
+  </style>
+  {% load crispy_forms_tags %}
+
+  
+  <form method="post">
+
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <button type="submit">Save</button>
+</form> 
+</body>
+</html>   

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+	<title>all courses</title>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+	<div class="container">
+		 <h1 style= "font-family: Lucida calligraphy">AVAILABLE COURSES</h1>
+        {% for course in courses%}
+		 <button ><a href="/course/add/">New Course</a></button>
+
+		 <!-- {%endfor%} -->
+
+  
+
+ 
+<table class="table table-striped">
+	<style>
+		body{
+			padding-top: 15px;
+			color: #800000;
+			background-color: #ccc;
+		}
+		body h1{
+		    color: green;
+		    font-weight: bold;
+  }
+</style>
+<tr>
+	<th>Name</th>
+	<th>Duration course</th>
+	<th>Start date</th>
+	<th>End date</th>
+	<th>Details</th>
+	<th>Edit</th>
+</tr>
+
+{% for course in courses%}
+
+<tr>
+	<td>{{ course.name }}</td>
+	<td>{{ course.duration_of_course }}</td>
+	<td>{{ course.start_date }}</td>
+	<td>{{ course.end_date }}</td>
+	
+	<td><a href = "/course/view/{{course.pk}}/">View more</a>
+	<td><a href = "/course/edit/{{course.pk}}/">Edit course</a>
+
+</tr>
+{%endfor%}
+
+
+
+</table>
+</div>
+</body>
+</html>

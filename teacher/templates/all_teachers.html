@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+	<title>all teachers</title>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+      <h1 style= "font-family: Lucida calligraphy">	ALL TEACHERS</h1>
+
+      {% for teacher in teachers%}
+      <button ><a href="/teacher/add/">New Teacher</a></button>
+      
+     <!--  {%endfor%} -->
+
+ 
+<table class="table table-striped">
+	<style>
+		body{
+			padding-top: 15px;
+			color: #800000;
+			background-color: #ccc;
+		}
+		body h1{
+		    color: green;
+		    font-weight: bold;
+  }
+</style>
+<tr>
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>proffesion</th>
+	<th>Gender</th>
+	<th>Details</th>
+	<th>Edit</th>
+</tr>
+
+{% for teacher in teachers%}
+
+<tr>
+	<td>{{ teacher.first_name }}</td>
+	<td>{{ teacher.last_name }}</td>
+	<td>{{ teacher.proffessional }}</td>
+	<td>{{ teacher.gender }}</td>
+	<td><a href = "/teacher/view/{{teacher.pk}}/">View more</a>
+	<td><a href = "/teacher/edit/{{teacher.pk}}/">Edit teacher</a>
+</tr>
+{%endfor%}
+
+
+
+</table>
+</div>
+
+						
+
+
+
+</body>
