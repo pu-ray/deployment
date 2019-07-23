@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+     
+     {% if user.isauthenticated %}
+
+		     welcome{{user.username}}
+		     Add student
+		     <a href="= /student/add/">Here</a>
+		     or 
+		     logout<a href = "/accounts/logout"/>Here</body>
+		          
+		     }
+		     }
+
+     {% else %}
+	         Not logged in
+		     Hello Guest
+	         You can login
+	         <a href="= /accounts/login/">Here</a>
+
+	     or Create an account
+	     <a href = "/accounts/register"/>Here</body>
+	          
+          
+     {% endif %}
+
+</body>
+</html>
