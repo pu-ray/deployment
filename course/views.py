@@ -7,6 +7,8 @@ from .forms import CourseForm
 
 from .models import Course
 
+from django.http import HttpResponse
+
 def add_course(request):
 	# form = CourseForm()
 	# return render(request,"add_course.html",{"form":form})
@@ -17,6 +19,11 @@ def add_course(request):
 		if form.is_valid():
 			form.save()
 			return redirect("list_courses")
+
+
+		else:
+			return HttpResponse("invalid data", status=400)
+
 	else:
 		form = CourseForm()
 

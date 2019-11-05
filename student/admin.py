@@ -4,7 +4,7 @@ from .models import Student
 
 class StudentAdmin(admin.ModelAdmin):
 	list_display = ("registration_no","first_name","last_name","date_of_birth","email","image")
-	search_fields = ("registration_no","first_name","last_name","email","image")
+	search_fields = ("registration_no","first_name","last_name","email",)
 
 admin.site.register(Student,StudentAdmin)
 
