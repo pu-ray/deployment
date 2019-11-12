@@ -17,7 +17,7 @@ class Student(models.Model):
     email = models.EmailField(max_length=70)
     phone_number = models.CharField(max_length=20)
     date_joined = models.DateField()
-    courses = models.ManyToManyField(Course, null=True, blank=True, related_name = "students")
+    courses = models.ManyToManyField(Course,  blank=True, related_name = "students")
     image = models.ImageField(upload_to="profile_image",blank=True)
 
     def __str__(self):
